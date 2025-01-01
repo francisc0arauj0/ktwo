@@ -16,7 +16,7 @@ wsl --install
 Clone repository
 
 ```bash
-git clone https://github.com/francisc0arauj0/ktwo/tree/main
+git clone https://github.com/francisc0arauj0/ktwo/
 ```
 
 Install tools
@@ -39,7 +39,7 @@ make
 Clone repository
 
 ```bash
-git clone https://github.com/francisc0arauj0/ktwo/tree/main
+git clone https://github.com/francisc0arauj0/ktwo
 ```
 
 Install tools
