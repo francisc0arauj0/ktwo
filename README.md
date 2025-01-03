@@ -2,6 +2,10 @@
 
 This is a kernel I am developing as a hobby project. I have no plans to release it for general use; it’s simply an opportunity to fulfill my desire to create something of my own and explore the challenge of building a kernel from scratch.
 
+<div align="center">
+  <img src=".github/Demo.png" />
+</div>
+
 ## TODO List
 
 ### Boot and basic setup
