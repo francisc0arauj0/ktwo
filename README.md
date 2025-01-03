@@ -18,8 +18,7 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 - [ ] Keyboard
 - [ ] Mouse
 - [ ] Disk
-- [ ] Audio
-- [ ] Network
+- [ ] Timer
 
 ### Kernel and Resources Management
 - [ ] Interupt
@@ -27,25 +26,6 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 
 ### Filesystem
 - [ ] Filesystem
-
-### User Envoirement
-- [ ] Shell
-- [ ] Graphics User Interface (GUI)
-- [ ] Window Manager
-- [ ] User Management
-
-### Native Applications
-- [ ] Start
-- [ ] Notepad
-- [ ] Calculator
-- [ ] Media Player
-- [ ] ToDo App
-- [ ] Clock
-- [ ] Code Editor
-- [ ] File Manager
-- [ ] Settings
-- [ ] Store
-- [ ] Web Browser
 
 ## Build
 
