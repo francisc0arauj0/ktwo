@@ -10,7 +10,7 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 
 ### Boot and basic setup
 - [X] Boot
-- [ ] GDT (Global Descriptor Table)
+- [X] GDT (Global Descriptor Table)
 - [ ] IDT (Interrupt Descriptor Table)
 
 ### Hardware Drivers
