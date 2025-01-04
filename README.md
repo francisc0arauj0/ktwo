@@ -23,7 +23,6 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 ### Kernel and Resources Management
 - [ ] Interupt
 - [ ] Memory
-- [ ] TSS (Task State Segment) 
 
 ### Filesystem
 - [ ] Filesystem
