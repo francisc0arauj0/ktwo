@@ -21,9 +21,10 @@ setup_kernel:
 	$(CC) $(C_FLGAS) -c kernel/main.c -o build/kernel.o
 	$(CC) $(C_FLGAS) -c kernel/vga.c -o build/vga.o
 	$(CC) $(C_FLGAS) -c kernel/gdt.c -o build/gdt.o
+	$(CC) $(C_FLGAS) -c kernel/memory.c -o build/memory.o
 
 setup_image:
-	ld -m elf_i386 -T linker.ld -o ktwokernel build/boot.o build/kernel.o build/vga.o build/gdt.o build/gdts.o  -z noexecstack
+	ld -m elf_i386 -T linker.ld -o ktwokernel build/boot.o build/kernel.o build/vga.o build/gdt.o build/gdts.o build/memory.o  -z noexecstack
 	mv ktwokernel ktwo/boot/kernel	
 	grub-mkrescue -o ktwo.iso ktwo/
 	rm -r build
