@@ -9,7 +9,7 @@ struct gdt_ptr_struct gdt_ptr;
 struct tss_entry_strucy tss_entry;
 
 void initGDT() {
-	gdt_ptr.limit = (sizeof(gdt_entries) * 6) - 1;
+	gdt_ptr.limit = (sizeof(struct gdt_entry_struct) * 6) - 1;
 	gdt_ptr.base = (uint32_t)&gdt_entries;
 
 	setGdtGates(0, 0, 0, 0, 0);								 // Null segment
