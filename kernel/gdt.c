@@ -6,7 +6,7 @@ extern void tss_flush();
 
 struct gdt_entry_struct gdt_entries[6];
 struct gdt_ptr_struct gdt_ptr;
-struct tss_entry_strucy tss_entry;
+struct tss_entry_struct tss_entry;
 
 void initGDT() {
 	gdt_ptr.limit = (sizeof(struct gdt_entry_struct) * 6) - 1;

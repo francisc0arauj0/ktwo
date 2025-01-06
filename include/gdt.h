@@ -16,7 +16,7 @@ struct gdt_ptr_struct {
 	unsigned int base;
 } __attribute__((packed));
 
-struct tss_entry_strucy {
+struct tss_entry_struct {
 	uint32_t prev_tss;
 	uint32_t esp0;
 	uint32_t ss0;
