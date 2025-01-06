@@ -17,32 +17,14 @@ struct gdt_ptr_struct {
 } __attribute__((packed));
 
 struct tss_entry_struct {
-	uint32_t prev_tss;
-	uint32_t esp0;
-	uint32_t ss0;
-	uint32_t esp1;
-	uint32_t ss1;
-	uint32_t esp2;
-	uint32_t ss2;
-	uint32_t cr3;
-	uint32_t eip;
-	uint32_t eflags;
-	uint32_t eax;
-	uint32_t ecx;
-	uint32_t edx;
-	uint32_t esp;
-	uint32_t ebp;
-	uint32_t esi;
-	uint32_t edi;
-	uint32_t es;
-	uint32_t cs;
-	uint32_t ss;
-	uint32_t ds;
-	uint32_t fs;
-	uint32_t gs;
-	uint32_t ldt;
-	uint32_t trap;
-	uint32_t iomap_base;
+	uint32_t esp0; // r0
+	uint32_t ss0;	 // r0
+	uint32_t cs;	 // Code Segment (r3)
+	uint32_t ss;	 // Stack Segment (r3)
+	uint32_t ds;	 // Data Segment (r3)
+	uint32_t es;	 // Extra Segment
+	uint32_t fs;	 // FS Segment
+	uint32_t gs;	 // GS Segment
 } __attribute__((packed));
 
 void initGDT();

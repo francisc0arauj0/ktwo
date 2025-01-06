@@ -38,6 +38,7 @@ void setGdtGates(uint32_t number, uint32_t base, uint32_t limit, uint8_t access,
 }
 
 void writeTSS(uint32_t number, uint16_t ss0, uint32_t esp0) {
+
 	uint32_t base = (uint32_t)&tss_entry;
 	uint32_t limit = base + sizeof(tss_entry);
 
@@ -48,7 +49,6 @@ void writeTSS(uint32_t number, uint16_t ss0, uint32_t esp0) {
 	tss_entry.esp0 = esp0;
 
 	tss_entry.cs = 0x08 | 0x3;
-
 	tss_entry.ss = 0x10 | 0x3;
 	tss_entry.ds = 0x10 | 0x3;
 	tss_entry.es = 0x10 | 0x3;
