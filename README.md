@@ -20,10 +20,6 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 - [ ] Disk
 - [ ] Timer
 
-### Kernel and Resources Management
-- [ ] Interupt
-- [ ] Memory
-
 ### Filesystem
 - [ ] Filesystem
 
