@@ -3,6 +3,11 @@ C_FLGAS = -m32 -fno-stack-protector -fno-builtin -Iinclude -Wall -Wextra -std=c1
 CF = clang-format
 ASM = nasm
 ASM_FLAGS = -f elf32
+LD = ld
+LD_FLAGS = -m elf_i386
+LD_FILES = build/boot.o build/kernel.o build/vga.o build/gdt.o build/gdts.o build/memory.o
+QEMU = qemu-system-i386
+ISO = ktwo.iso
 
 all: code_format setup_folders setup_boot setup_kernel setup_image
 
@@ -24,11 +29,11 @@ setup_kernel:
 	$(CC) $(C_FLGAS) -c kernel/memory.c -o build/memory.o
 
 setup_image:
-	ld -m elf_i386 -T linker.ld -o ktwokernel build/boot.o build/kernel.o build/vga.o build/gdt.o build/gdts.o build/memory.o  -z noexecstack
+	$(LD) $(LD_FLAGS) -T linker.ld -o ktwokernel $(LD_FILES) -z noexecstack
 	mv ktwokernel ktwo/boot/kernel	
 	grub-mkrescue -o ktwo.iso ktwo/
 	rm -r build
-	qemu-system-i386 ktwo.iso
+	$(QEMU) $(ISO)
 
 # file ktwo.ios
 # xorriso -indev ktwo.iso -find
