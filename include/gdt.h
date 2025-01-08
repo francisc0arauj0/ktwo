@@ -28,5 +28,5 @@ struct tss_entry_struct {
 } __attribute__((packed));
 
 void initGDT();
-void setGdtGates(uint32_t number, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran);
+void setGdtGate(uint32_t number, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran);
 void writeTSS(uint32_t number, uint16_t ss0, uint32_t esp0);
