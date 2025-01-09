@@ -17,6 +17,8 @@ code_format:
 	$(CF) -i kernel/memory.c
 	$(CF) -i kernel/vga.c
 	$(CF) -i kernel/gdt/gdt.c
+	$(CF) -i kernel/idt/idt.c
+	$(CF) -i kernel/io.c
 	$(CF) -i include/*
 
 setup_folders:
