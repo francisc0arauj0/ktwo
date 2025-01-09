@@ -6,14 +6,15 @@
 uint64_t ticks;
 const uint32_t frequency = 100;
 
-void onIrq0(struct InterruptRegisters *regs) {
-	ticks += 1;
-	print("Timer Ticked!");
-}
+/**
+ * void onIrq0(struct InterruptRegisters *regs) {
+ *  ticks += 1;
+ *	print("Timer Ticked!");
+ * } 
+ */
 
 void initTimer() {
 	ticks = 0;
-	irq_handler_manager(0, &onIrq0, 1);
 
 	// 1.1931816666 Mhz
 	uint32_t divisor = 1193180 / frequency;
