@@ -5,7 +5,6 @@ ASM = nasm
 ASM_FLAGS = -f elf32
 LD = ld
 LD_FLAGS = -m elf_i386
-LD_FILES = build/boot.o build/kernel.o build/vga.o build/gdt.o build/gdts.o build/memory.o build/io.o build/idt.o build/idts.o
 QEMU = qemu-system-i386
 QEMU_FLAGS = -M smm=off -monitor stdio -d int -D kernel.log
 ISO = ktwo.iso
@@ -38,7 +37,7 @@ setup_kernel:
 	$(ASM) $(ASM_FLAGS) kernel/idt/idt.asm -o build/idts.o
 
 setup_image:
-	$(LD) $(LD_FLAGS) -T linker.ld -o ktwokernel $(LD_FILES) -z noexecstack
+	$(LD) $(LD_FLAGS) -T linker.ld -o ktwokernel build/* -z noexecstack
 	mv ktwokernel ktwo/boot/kernel	
 	grub-mkrescue -o ktwo.iso ktwo/
 	rm -r build
