@@ -18,7 +18,7 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 - [ ] Keyboard
 - [ ] Mouse
 - [ ] Disk
-- [ ] Timer
+- [X] Timer
 
 ### Filesystem
 - [ ] Filesystem
