@@ -120,8 +120,8 @@ char* exception_messages[] = {
 
 void isr_handler(struct InterruptRegisters *regs) {
 	if (regs->int_no < 32) {
-    reset();
-    screenColor(VGA_RED);
+		reset();
+		screenColor(VGA_RED);
 		error(exception_messages[regs->int_no]);
 		error("\nException! System Halted\n");
 		for (;;)
@@ -149,13 +149,13 @@ void irq_handler(struct InterruptRegisters *regs) {
 
 	handler = irq_routines[regs->int_no - 32];
 
-  if (handler) {
-    handler(regs);
-  };
+	if (handler) {
+		handler(regs);
+	};
 
-  if (regs->int_no >= 40) {
-    outPortB(0xA0, 0x20);
-  };
+	if (regs->int_no >= 40) {
+		outPortB(0xA0, 0x20);
+	};
 
-  outPortB(0x20, 0x20);
+	outPortB(0x20, 0x20);
 }
