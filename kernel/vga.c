@@ -30,11 +30,12 @@ void newLine() {
 void scrollUp() {
 	for (uint16_t y = 0; y < height; y++) {
 		for (uint16_t x = 0; x < width; x++) {
-			vga[(height - 1) * width + x] = ' ' | default_color;
+			vga[(y - 1) * width + x] = vga[y * width + x];
 		}
-		for (uint16_t x = 0; x < width; x++) {
-			vga[(height - 1) * width + x] = ' ' | default_color;
-		}
+	}
+
+	for (uint16_t x = 0; x < width; x++) {
+		vga[(height - 1) * width + x] = ' ' | default_color;
 	}
 }
 
