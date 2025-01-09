@@ -18,6 +18,7 @@ code_format:
 	$(CF) -i kernel/gdt/gdt.c
 	$(CF) -i kernel/idt/idt.c
 	$(CF) -i kernel/io.c
+	$(CF) -i kernel/timer.c
 	$(CF) -i include/*
 
 setup_folders:
@@ -35,6 +36,7 @@ setup_kernel:
 	$(CC) $(C_FLGAS) -c kernel/io.c -o build/io.o
 	$(CC) $(C_FLGAS) -c kernel/idt/idt.c -o build/idt.o
 	$(ASM) $(ASM_FLAGS) kernel/idt/idt.asm -o build/idts.o
+	$(CC) $(C_FLGAS) -c kernel/timer.c -o build/timer.o
 
 setup_image:
 	$(LD) $(LD_FLAGS) -T linker.ld -o ktwokernel build/* -z noexecstack
@@ -48,4 +50,4 @@ setup_qemu:
 # file ktwo.ios
 # xorriso -indev ktwo.iso -find
 # info registers
-# addr2line -e ktwo/boot/kernel 0x00100018
+# addr2line -e ktwo/boot/kernel <addr>
