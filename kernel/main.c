@@ -1,4 +1,5 @@
 #include "gdt.h"
+#include "idt.h"
 #include "vga.h"
 
 void kmain(void);
@@ -8,4 +9,6 @@ void kmain(void) {
 	print("\n[VGA] Finished");
 	initGDT();
 	print("\n[GDT] Finished");
+	initIDT();
+	print("\n[IDT] Finished");
 }
