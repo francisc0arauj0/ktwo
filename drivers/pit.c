@@ -1,6 +1,6 @@
 #include "idt.h"
 #include "stdint.h"
-#include "timer.h"
+#include "pit.h"
 #include "vga.h"
 
 uint64_t ticks;
