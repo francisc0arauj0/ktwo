@@ -7,9 +7,10 @@ LD = ld
 LD_FLAGS = -m elf_i386
 LD_FILES = build/boot.o build/kernel.o build/vga.o build/gdt.o build/gdts.o build/memory.o
 QEMU = qemu-system-i386
+QEMU_FLAGS = -M smm=off -monitor stdio
 ISO = ktwo.iso
 
-all: code_format setup_folders setup_boot setup_kernel setup_image
+all: code_format setup_folders setup_boot setup_kernel setup_image setup_qemu
 
 code_format:
 	$(CF) -i kernel/*
@@ -33,7 +34,9 @@ setup_image:
 	mv ktwokernel ktwo/boot/kernel	
 	grub-mkrescue -o ktwo.iso ktwo/
 	rm -r build
-	$(QEMU) $(ISO) -M smm=off -monitor stdio
+
+setup_qemu:
+	$(QEMU) $(ISO) $(QEMU_FLAGS)
 
 # file ktwo.ios
 # xorriso -indev ktwo.iso -find
