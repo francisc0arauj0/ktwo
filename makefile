@@ -13,7 +13,10 @@ ISO = ktwo.iso
 all: code_format setup_folders setup_boot setup_kernel setup_image setup_qemu
 
 code_format:
-	$(CF) -i kernel/*
+	$(CF) -i kernel/main.c
+	$(CF) -i kernel/memory.c
+	$(CF) -i kernel/vga.c
+	$(CF) -i kernel/gdt/gdt.c
 	$(CF) -i include/*
 
 setup_folders:
@@ -21,12 +24,12 @@ setup_folders:
 
 setup_boot:
 	$(ASM) $(ASM_FLAGS) boot/boot.asm -o build/boot.o
-	$(ASM) $(ASM_FLAGS) boot/gdt.asm -o build/gdts.o
 
 setup_kernel:
 	$(CC) $(C_FLGAS) -c kernel/main.c -o build/kernel.o
 	$(CC) $(C_FLGAS) -c kernel/vga.c -o build/vga.o
-	$(CC) $(C_FLGAS) -c kernel/gdt.c -o build/gdt.o
+	$(CC) $(C_FLGAS) -c kernel/gdt/gdt.c -o build/gdt.o
+	$(ASM) $(ASM_FLAGS) kernel/gdt/gdt.asm -o build/gdts.o
 	$(CC) $(C_FLGAS) -c kernel/memory.c -o build/memory.o
 
 setup_image:
