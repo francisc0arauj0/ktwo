@@ -14,11 +14,10 @@ all: code_format setup_folders setup_boot setup_kernel setup_image setup_qemu
 code_format:
 	$(CF) -i kernel/main.c
 	$(CF) -i kernel/memory.c
-	$(CF) -i kernel/vga.c
 	$(CF) -i kernel/gdt/gdt.c
 	$(CF) -i kernel/idt/idt.c
 	$(CF) -i kernel/io.c
-	$(CF) -i kernel/timer.c
+	$(CF) -i drivers/**/*
 	$(CF) -i include/*
 
 setup_folders:
@@ -29,14 +28,14 @@ setup_boot:
 
 setup_kernel:
 	$(CC) $(C_FLGAS) -c kernel/main.c -o build/kernel.o
-	$(CC) $(C_FLGAS) -c kernel/vga.c -o build/vga.o
+	$(CC) $(C_FLGAS) -c drivers/graphics/vga.c -o build/vga.o
 	$(CC) $(C_FLGAS) -c kernel/gdt/gdt.c -o build/gdt.o
 	$(ASM) $(ASM_FLAGS) kernel/gdt/gdt.asm -o build/gdts.o
 	$(CC) $(C_FLGAS) -c kernel/memory.c -o build/memory.o
 	$(CC) $(C_FLGAS) -c kernel/io.c -o build/io.o
 	$(CC) $(C_FLGAS) -c kernel/idt/idt.c -o build/idt.o
 	$(ASM) $(ASM_FLAGS) kernel/idt/idt.asm -o build/idts.o
-	$(CC) $(C_FLGAS) -c kernel/timer.c -o build/timer.o
+	$(CC) $(C_FLGAS) -c drivers/timers/pit.c -o build/timer.o
 
 setup_image:
 	$(LD) $(LD_FLAGS) -T linker.ld -o ktwokernel build/* -z noexecstack
