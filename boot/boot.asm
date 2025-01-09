@@ -1,4 +1,4 @@
-bits 64
+bits 32
 
 section .text
   align 4
