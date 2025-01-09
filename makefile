@@ -33,8 +33,8 @@ setup_image:
 	mv ktwokernel ktwo/boot/kernel	
 	grub-mkrescue -o ktwo.iso ktwo/
 	rm -r build
-	$(QEMU) $(ISO)
+	$(QEMU) $(ISO) -M smm=off -monitor stdio
 
 # file ktwo.ios
 # xorriso -indev ktwo.iso -find
-# sudo apt install grub-pc-bin
+# info registers
