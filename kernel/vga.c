@@ -1,5 +1,4 @@
 #include "vga.h"
-#include "stdint.h"
 
 uint16_t column = 0;
 uint16_t row = 0;
@@ -51,6 +50,14 @@ void handleTab() {
 	}
 }
 
+void screenColor(uint16_t color) {
+	for (uint16_t y = 0; y < height; y++) {
+		for (uint16_t x = 0; x < width; x++) {
+			vga[y * width + x] = (vga[y * width + x] & 0x00FF) | (color << 12);
+		}
+	}
+}
+
 void print(const char *message) {
 	while (*message) {
 		if (*message == '\n') {
@@ -66,5 +73,23 @@ void print(const char *message) {
 			vga[row * width + (column++)] = *message | default_color;
 		}
 		message++;
+	}
+}
+
+void error(const char *error) {
+	while (*error) {
+		if (*error == '\n') {
+			newLine();
+		} else if (*error == '\r') {
+			column = 0;
+		} else if (*error == '\t') {
+			handleTab();
+		} else {
+			if (column == width) {
+				newLine();
+			}
+			vga[row * width + (column++)] = *error | (VGA_WHITE << 8) | (VGA_RED << 12);
+		}
+		error++;
 	}
 }
