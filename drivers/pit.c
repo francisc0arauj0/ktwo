@@ -1,6 +1,6 @@
+#include "pit.h"
 #include "idt.h"
 #include "stdint.h"
-#include "pit.h"
 #include "vga.h"
 
 uint64_t ticks;
@@ -10,7 +10,7 @@ const uint32_t frequency = 100;
  * void onIrq0(struct InterruptRegisters *regs) {
  *  ticks += 1;
  *	print("Timer Ticked!");
- * } 
+ * }
  */
 
 void initTimer() {
