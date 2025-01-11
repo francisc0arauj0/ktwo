@@ -1,5 +1,5 @@
 build
 ktwo.iso
-ktwo/boot/kernel
+ktwo
 
 arch/x86/kernelx86.log
