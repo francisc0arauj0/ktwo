@@ -13,9 +13,9 @@ all: code_format setup_folders setup_boot setup_kernel setup_image setup_qemu
 
 code_format:
 	$(CF) -i arch/x86/kernel/main.c
+	$(CF) -i arch/x86/kernel/io.c
 	$(CF) -i arch/x86/kernel/gdt/gdt.c
 	$(CF) -i arch/x86/kernel/idt/idt.c
-	$(CF) -i arch/x86/kernel/io.c
 	$(CF) -i arch/x86/include/*
 	$(CF) -i lib/memory.c
 	$(CF) -i drivers/*
