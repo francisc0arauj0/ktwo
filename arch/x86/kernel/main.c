@@ -1,14 +1,15 @@
 #include "gdt.h"
 #include "idt.h"
+#include "stdio.h"
 #include "vga.h"
 
 void kmain(void);
 
 void kmain(void) {
-	print("ktwo kernel\n");
-	print("\n[VGA] Finished");
+	puts("Welcome to ktwo kernel");
+	puts("[VGA] Finished");
 	initGDT();
-	print("\n[GDT] Finished");
+	puts("[GDT] Finished");
 	initIDT();
-	print("\n[IDT] Finished");
+	puts("[IDT] Finished");
 }

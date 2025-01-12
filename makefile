@@ -1,5 +1,5 @@
 CC = gcc
-C_FLGAS = -g -m32 -fno-stack-protector -fno-builtin -Iinclude -Iarch/x86/include -Wall -Wextra -std=c11
+C_FLGAS = -g -m32 -fno-stack-protector -fno-builtin -Iinclude -Iinclude/std -Iarch/x86/include -Wall -Wextra -std=c11
 CF = clang-format
 ASM = nasm
 ASM_FLAGS = -f elf32
@@ -19,7 +19,8 @@ code_format:
 	$(CF) -i arch/x86/include/*
 	$(CF) -i lib/memory.c
 	$(CF) -i drivers/*
-	$(CF) -i include/*
+	$(CF) -i include/**/*
+	$(CF) -i lib/**/*
 
 setup_folders:
 	mkdir build
@@ -33,6 +34,7 @@ setup_kernel:
 	$(CC) $(C_FLGAS) -c arch/x86/kernel/gdt/gdt.c -o build/gdt.o
 	$(ASM) $(ASM_FLAGS) arch/x86/kernel/gdt/gdt.asm -o build/gdts.o
 	$(CC) $(C_FLGAS) -c lib/memory.c -o build/memory.o
+	$(CC) $(C_FLGAS) -c lib/std/stdio.c -o build/stdio.o
 	$(CC) $(C_FLGAS) -c arch/x86/kernel/io.c -o build/io.o
 	$(CC) $(C_FLGAS) -c arch/x86/kernel/idt/idt.c -o build/idt.o
 	$(ASM) $(ASM_FLAGS) arch/x86/kernel/idt/idt.asm -o build/idts.o
