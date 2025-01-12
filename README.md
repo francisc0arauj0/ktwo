@@ -8,9 +8,14 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 
 ## TODO List
 
-### Architecture
+### Bitness
 - [X] 32 bits
 - [ ] 64 bits
+
+### Architecture
+- [X] X86_64
+- [ ] ARM
+- [ ] RISC-V
 
 ### Boot and basic setup
 - [X] Boot
@@ -24,7 +29,7 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 - [ ] Disk
 - [X] Timer
 
-### Filesystem
+### Others
 - [ ] Filesystem
 
 ## Build
