@@ -12,7 +12,8 @@ git clone https://github.com/francisc0arauj0/ktwo/
 - grub-mkrescue
 - qemu
 
-### **Setup Grub**
+### **Setup Grub** 
+If you want to use another bootloader it will be at your own risk.
 
 Create folders
 
