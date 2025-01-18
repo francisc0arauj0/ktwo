@@ -10,7 +10,7 @@ git clone https://github.com/francisc0arauj0/ktwo/
 
 - nasm
 - grub-mkrescue
-- qemu
+- qemu-system-i386
 - clang-format
 
 ### **Setup Grub** 
