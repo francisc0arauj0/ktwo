@@ -21,6 +21,7 @@ git clone https://github.com/francisc0arauj0/ktwo/
 - grub-pc-bin
 - qemu
 - make
+- clang-format
 
 ### **Setup Grub**
 If you want to use another bootloader it will be at your own risk.
