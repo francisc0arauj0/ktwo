@@ -11,6 +11,7 @@ git clone https://github.com/francisc0arauj0/ktwo/
 - nasm
 - grub-pc-bin
 - xorriso
+- mtools
 - qemu-system-i386
 - clang-format
 
