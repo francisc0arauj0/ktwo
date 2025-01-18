@@ -8,6 +8,7 @@ git clone https://github.com/francisc0arauj0/ktwo/
 
 ### **Install tools**
 
+- gcc
 - nasm
 - grub-pc-bin
 - xorriso
