@@ -9,7 +9,7 @@ git clone https://github.com/francisc0arauj0/ktwo/
 ### **Install tools**
 
 - nasm
-- grub-mkrescue
+- grub-pc-bin
 - qemu-system-i386
 - clang-format
 
