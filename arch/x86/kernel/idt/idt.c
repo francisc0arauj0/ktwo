@@ -122,8 +122,8 @@ void isr_handler(struct InterruptRegisters *regs) {
 	if (regs->int_no < 32) {
 		reset();
 		screenColor(VGA_RED);
-		error(exception_messages[regs->int_no]);
-		error("\nException! System Halted\n");
+		print(exception_messages[regs->int_no], 1);
+		print("\nException! System Halted\n", 1);
 		for (;;)
 			;
 	}
