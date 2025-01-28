@@ -59,7 +59,7 @@ void screenColor(uint16_t color) {
 	}
 }
 
-void print(const char *message) {
+void print(const char *message, int error) {
 	while (*message) {
 		if (*message == '\n') {
 			newLine();
@@ -71,26 +71,12 @@ void print(const char *message) {
 			if (column == width) {
 				newLine();
 			}
-			vga[row * width + (column++)] = *message | default_color;
+			if (error) {
+				vga[row * width + (column++)] = *message | (VGA_WHITE << 8) | (VGA_RED << 12);
+			} else {
+				vga[row * width + (column++)] = *message | default_color;
+			}
 		}
 		message++;
-	}
-}
-
-void error(const char *error) {
-	while (*error) {
-		if (*error == '\n') {
-			newLine();
-		} else if (*error == '\r') {
-			column = 0;
-		} else if (*error == '\t') {
-			handleTab();
-		} else {
-			if (column == width) {
-				newLine();
-			}
-			vga[row * width + (column++)] = *error | (VGA_WHITE << 8) | (VGA_RED << 12);
-		}
-		error++;
 	}
 }

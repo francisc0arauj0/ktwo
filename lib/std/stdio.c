@@ -3,7 +3,7 @@
 
 void putc(char c) {
 	//
-	print(&c);
+	print(&c, 0);
 }
 
 void puts(const char *s) {

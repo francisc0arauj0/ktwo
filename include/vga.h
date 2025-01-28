@@ -27,6 +27,5 @@
 void reset();
 void newLine();
 void scrollUp();
-void print(const char *message);
-void error(const char *error);
+void print(const char *message, int error);
 void screenColor(uint16_t color);
