@@ -9,11 +9,14 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 ## TODO List
 
 ### Bitness
+- [ ]  8 bits
+- [ ] 16 bits
 - [X] 32 bits
 - [ ] 64 bits
 
 ### Architecture
-- [X] X86_64
+- [X] x86
+- [ ] X86_64
 - [ ] ARM
 - [ ] RISC-V
 
