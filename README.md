@@ -27,7 +27,7 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 
 ### Hardware Drivers
 - [X] VGA
-- [X] Pit
+- [X] PIT
 - [ ] Keyboard
 - [ ] Mouse
 - [ ] Disk
