@@ -6,7 +6,8 @@
 void kmain(void);
 
 void kmain(void) {
-	puts("Welcome to ktwo kernel");
+	puts("Welcome to KTWO");
+	puts("Copyright (C) Francisco Araujo, GPL-3.0\n");
 	puts("[VGA] Finished");
 	initGDT();
 	puts("[GDT] Finished");
