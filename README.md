@@ -22,8 +22,10 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 
 ### Boot and basic setup
 - [X] Boot
+- [ ] Multiboot
 - [X] GDT (Global Descriptor Table)
 - [X] IDT (Interrupt Descriptor Table)
+- [ ] Paging 
 
 ### Hardware Drivers
 - [X] VGA
