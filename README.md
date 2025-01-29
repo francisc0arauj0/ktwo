@@ -1,4 +1,4 @@
-# ktwo kernel (32 bits)
+# ktwo kernel
 
 This is a kernel I am developing as a hobby project. I have no plans to release it for general use; it’s simply an opportunity to fulfill my desire to create something of my own and explore the challenge of building a kernel from scratch.
 
@@ -27,10 +27,10 @@ This is a kernel I am developing as a hobby project. I have no plans to release 
 
 ### Hardware Drivers
 - [X] VGA
+- [X] Pit
 - [ ] Keyboard
 - [ ] Mouse
 - [ ] Disk
-- [X] Pit
 
 ### Others
 - [ ] Filesystem
